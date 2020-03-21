@@ -3,7 +3,7 @@ class carPage {
 
   assertCarSearching(car) {
     this.header.waitForExist();
-    const itemArray  = $$('[data-e2e-id="searchResultsCar"]');
+    const itemArray  = $$('[data-e2e-id="searchResultsCar"] h3[data-e2e-id="cardCarName"]');
     itemArray.forEach((element) => {
       const text = element.getText();
       console.log('DEBUG', text);
