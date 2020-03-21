@@ -5,7 +5,7 @@ The main idea of this framework is to provide easy, maintainable and reliable au
 ## Framework installation
 
 **Install node js**
-
+v10.16.3
 download here https://nodejs.org/en/download/
 
 **Install Java 8**

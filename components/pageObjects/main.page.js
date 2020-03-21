@@ -14,7 +14,7 @@ class MainPage {
 
   selectCarBrand(carBrand) {
     this.brandDropdown.click();
-    browser.pause(1000);
+    browser.pause(1000); // Required to do item wait
     const carMod = $(`[value=${carBrand}] + div`);
     carMod.click();
   }

@@ -7,19 +7,15 @@ Then('Assert Car searching', function() {
 
 Then (/^Assert "([^"]*)" searching$/, car => carPage.assertCarSearching(car));
 
-When('User select price', function() {
-  carPage.selectPrice('50000', '75000');
-});
+When (/^User select min price "([^"]*)"$/, minPrice => carPage.selectMinPrice(minPrice));
 
-Then (/^User select min price "([^"]*)"$/, minPrice => carPage.selectMinPrice(minPrice));
+When (/^User select max price "([^"]*)"$/, maxPrice => carPage.selectMaxPrice(maxPrice));
 
-Then (/^User select max price "([^"]*)"$/, maxPrice => carPage.selectMaxPrice(maxPrice));
-
-Then (/^User select "([^"]*)" transmission type$/, type => carPage.selectTypeOfTransmission(type));
+When (/^User select "([^"]*)" transmission type$/, type => carPage.selectTypeOfTransmission(type));
 
 Then (/^Assert cars "([^"]*)" transmission type$/, type => carPage.assertCarTransmission(type));
 
-Then('Price array', function() {
-  carPage.assertPriceRange()
+Then (/^Assert min - "([^"]*)" max - "([^"]*)" price type$/, function(min, max) {
+ carPage.assertPriceRange(min, max)
 });
 

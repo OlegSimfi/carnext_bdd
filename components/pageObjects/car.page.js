@@ -44,14 +44,15 @@ class carPage {
     });
   }
 
-  assertPriceRange() {
+  assertPriceRange(min, max) {
     const itemArray = $$('[data-e2e-id="searchResultsCar"] [data-e2e-id="carBuyPrice"]');
     itemArray.forEach((element) => {
       const text = element.getText();
-      const priceArray = parseInt(text.substring(1, text.length - 2).replace(/\./g, ""));
+      const priceItem = parseInt(text.substring(1, text.length - 2).replace(/\./g, ""));
+      assert.isAtLeast(priceItem, parseInt(min));
+      assert.isAtMost(priceItem, parseInt(max));
     });
   }
 }
-
 
 module.exports = new carPage;
